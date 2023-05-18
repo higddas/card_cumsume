@@ -87,20 +87,20 @@ cust_num * 0.2  # 상위 20퍼의 고객 수 :5383
 
 (2) `전체` 고객별 총 구매금액, `상위 20%` 고객별 총 구매금액 구하기
 
-# 고객별 구매 총 금액 
+ 고객별 구매 총 금액 
 df_buy= df.groupby('cust').sum('buy_am')
 
-# 전체 고객별 구매 총 금액 (내림차순 정렬)
+ 전체 고객별 구매 총 금액 (내림차순 정렬)
 df_buy_sum= df_buy.sort_values('buy_am', ascending = False)
 df_buy_sum
 
 
-# 상위 20퍼 고객별 구매 총 금액 (min 4139766, max 386581410)
+ 상위 20퍼 고객별 구매 총 금액 (min 4139766, max 386581410)
 df_buy_sum_20p = df_buy_sum.sort_values('buy_am', ascending = False)/n
 									.head(round(cust_num*0.2))
 df_buy_sum_20p
 
-# 전체 고객 26,917 명에 대한 데이터
+ 전체 고객 26,917 명에 대한 데이터
 
 - Min 10
 - Max 386,581,410(3억 8658만 1410원)
